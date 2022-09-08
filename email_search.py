@@ -29,7 +29,7 @@ import re
 
 def email_search(text):
     res = []
-    raw_mail_list = re.findall(r"[a-zA-Z0-9'_][a-zA-Z0-9'._+-]{,63}@[a-zA-Z0-9.-]{,254}[a-zA-Z0-9]", text)
+    raw_mail_list = re.findall(r"[a-zA-Z0-9][a-zA-Z0-9'._+-]{,63}@[a-zA-Z0-9.-]{,254}[a-zA-Z0-9]", text)
     for raw_mail in raw_mail_list:
         dots_valid = re.search('\.\.', raw_mail)
         (local_part, domain_part) = raw_mail.split('@')
